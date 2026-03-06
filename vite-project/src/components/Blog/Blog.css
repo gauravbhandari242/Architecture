@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.faq {
+  width: 100%;
+  padding: 20px 9%;
+  background:whitesmoke;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+/* ==========================
+   GRID LAYOUT
+========================== */
+
+.faq-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  align-items: start;
+}
+
+/* ==========================
+   LEFT COLUMN
+========================== */
+
+/* Heading (Top Left) */
+.faq-lefte {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Image (Below Heading) */
+.faq-left {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.faq-left img {
+  width: 357px;
+  object-fit: cover;
+  margin-bottom:30px;
+}
+
+/* ==========================
+   RIGHT COLUMN
+========================== */
+
+/* FAQ List (Full Right Side) */
+.faq-list {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3; /* spans full height */
+  width: 100%;
+  margin-top: 20%
+  
+}
+
+/* ==========================
+   TEXT STYLING
+========================== */
+
+.faq-tag {
+  font-size: 16px;
+  color: black;
+  text-align: center;
+}
+
+.faq-lefte h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+;
+  
+}
+
+/* ==========================
+   FAQ ITEMS
+========================== */
+
+.faq-item {
+  padding: 20px;
+  border-bottom: 1px solid #2a2a2a;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  margin-top: 20px;
+  
+  
+}
+
+.faq-item:hover {
+  border-color: #ffffff;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+
+}
+
+.arrow {
+  font-size: 15px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  margin-top: 14px;
+  font-size: 15px;
+  color: black;
+  line-height: 1.7;
+}
+@media (max-width: 900px) {
+  .faq-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 40px;
+  }
+
+  .faq-lefte,
+  .faq-left,
+  .faq-list {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .faq-lefte h2 {
+    font-size: 30px;
+  }
+
+  .faq-left img {
+    max-width: 100%;
+    width: 100%;
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .faq { padding: 10px 6%; }
+  .faq-lefte h2 { font-size: 24px; }
+  .faq-tag { font-size: 14px; }
+}

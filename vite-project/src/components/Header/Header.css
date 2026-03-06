@@ -1,0 +1,273 @@
+/* ========================= */
+/* GLOBAL RESET */
+/* ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* ========================= */
+/* BACKGROUND SECTION */
+/* ========================= */
+
+.img-back {
+  position: relative;
+  background: url("img/cc3201257d0cf4026058c0bb6aaa2abf65122ca3 (2).png")
+    no-repeat center center / cover;
+
+  width: 100%;
+  min-height: 100svh;   /* better than 100vh for mobile */
+  padding: 140px 20px 80px;
+  color: #fff;
+  z-index: 1;
+}
+
+
+/* Dark Overlay */
+.img-back::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  z-index: 1;
+}
+
+.img-back > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1150px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 30px;
+  background: rgba(105, 99, 122, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+
+  z-index: 9999;
+}
+
+/* Logo */
+.logo img {
+  width: clamp(28px, 4vw, 40px);
+  height: auto;
+}
+
+/* Desktop Menu */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: clamp(14px, 1.1vw, 16px);
+  transition: 0.3s ease;
+}
+
+.menu li a:hover {
+  opacity: 0.7;
+}
+
+/* Navbar Button */
+.nabvar-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: orangered;
+  color: white !important;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* HAMBURGER */
+/* ========================= */
+/* Disable background scroll */
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;  
+}
+
+.hero-content h1 {
+  font-size: clamp(28px, 5vw, 60px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+
+.hero-content p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.6;
+  color: white;
+}
+
+  
+
+
+
+
+/* HERO BUTTONS */
+
+.hero-btn {
+  
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+.primary {
+  background: orangered;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* ========================= */
+/* TABLET & MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    width: 94%;
+    padding: 12px 20px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -104%;
+    width: 100%;
+    height: 100vh;
+     background-color: rgba(0, 0, 0, 0.6);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    transition: 0.4s ease;
+    z-index: 9998;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu li a {
+    font-size: 20px;
+  }
+
+  .hero-btn {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .btn {
+    text-align: center;
+  }
+  .hero-content p {
+    width: 80%;
+  }
+  
+}
+
+/* ========================= */
+/* SMALL DEVICES */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    width: 95%;
+    border-radius: 30px;
+    
+  }
+
+  .img-back {
+    padding: 120px 15px 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+}
+

@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* ===============================
+   JOURNEY SECTION
+================================ */
+
+.journey {
+  background: #ffffff;
+  padding: 60px 6px;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.left {
+  flex: 1;
+}
+
+.left .tag {
+  color:black;
+  font-size: 14px;
+  
+
+
+}
+
+.left h2 {
+  font-size: 42px;
+  line-height: 1.2;
+   color:black;
+   font-weight: bold;
+
+
+  
+}
+
+/* RIGHT SIDE */
+.right {
+  flex: 2;
+}
+
+/* TOP ROW */
+.row.two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-items: stretch;   /* Important */
+}
+
+/* CARD STYLE */
+.card-to {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Makes height equal */
+  height: 100%;  /* Important */
+}
+
+/* IMAGE FIX */
+.card-to img {
+  width: 100%;
+  object-fit: cover;  /* Prevent stretch */
+  border-radius: 8px;
+}
+
+/* ===============================
+   BOTTOM ROW (3 CARDS)
+================================ */
+
+.container-two {
+  width: 90%;
+  max-width: 1300px;
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ===============================
+   CARD STYLING
+================================ */
+
+.card-to,
+.card-three {
+  
+  padding: 25px;
+  border-radius: 24px;
+  transition: 0.3s ease;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+
+}
+
+.num {
+  display: flex;
+  align-items: center;   /* vertically center */
+  gap: 10px;             /* space between 02 and line */
+  font-size: 18px;
+  font-weight: 100;
+  color: rgb(160, 138, 138);
+  margin-bottom: 10px;
+  
+}
+.num span{border: 1px solid ; 
+border-radius: 12px;
+padding: 9px 12px;}
+
+.num hr {
+  flex: 1;               /* makes line expand */
+  border: none;
+  height: 2px;
+  background-color: rgb(240, 231, 231);
+}
+
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color:black;
+  font-weight: bolder;
+  
+
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.card-to img,
+.card-three img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Large Tablet (1024px and below) */
+@media (max-width: 1024px) {
+
+  .container {
+    flex-direction: column;
+    gap: 0px;
+    
+  }
+
+  .left {
+    padding: 20px;
+    
+  }
+
+  .left h2 {
+    font-size: 32px;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .row.two {
+    grid-template-columns: 1fr;
+  }
+
+  .container-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-to,
+  .card-three {
+    width: 100%;
+  }
+}
+
+/* Small Tablet (768px and below) */
+@media (max-width: 768px) {
+
+  .left h2 {
+    font-size: 20px;
+  }
+
+  .container-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (600px and below) */
+@media (max-width: 600px) {
+
+  .journey {
+    padding: 20px 0px;
+  }
+  .tag p h2{}
+
+  .left h2 {
+    font-size: 20px;
+    
+    
+  }
+
+  .num {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+    
+  }
+
+  p {
+    font-size: 12px;
+    color: #000;
+  }
+
+  .card-to,
+  .card-three {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .card-to img,
+  .card-three img {
+    width: 100%;
+    height: auto;
+  }
+}

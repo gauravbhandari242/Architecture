@@ -1,0 +1,266 @@
+ 
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ .contact-section{
+  position: relative;
+  width: 100%; 
+    background-image: url("/img/5f338df9e592125624d31fbb6b4f017faa6d02a4.png");
+    background-size: cover;
+    background-position: center;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  z-index:0 ;
+  
+}
+
+.contact-form input{ 
+  color:white;
+}
+/* Overlay (for depth effect) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index:0 ;
+}
+
+/* Wrapper */
+.contact-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 80px 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  color: #fff;
+}
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+
+.contact-left {
+  flex: 1;
+  max-width: 600px;
+  
+}
+
+.contact-left span {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color:white;
+}
+
+.contact-left h1 {
+  font-size: 48px;
+  margin: 20px 0;
+  font-weight: 600;
+  line-height: 1.2;
+  color:white;
+}
+
+.contact-left p {
+  font-size: 15px;
+  color: white;
+  margin-bottom: 32px;
+}
+
+/* Info Card */
+.info-card {
+  padding: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  margin-bottom: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.info-card div {
+  margin-bottom: 20px;
+}
+
+.info-card div:last-child {
+  margin-bottom: 0;
+}
+
+.info-card small {
+  font-size: 16px;
+  color:white;
+  letter-spacing: 1px;
+  
+}
+
+.info-card p {
+  margin-top: 6px;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* Social Icons */
+/* ============================= */
+/* SOCIAL ICONS */
+/* ============================= */
+
+.socials {
+  display: flex;
+  gap: 18px;
+  position: relative;
+  z-index: 10;
+}
+
+.socials a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Icon size */
+.socials a svg {
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.socials a:hover {
+  background-color: #2563eb; /* premium blue */
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.socials a:hover svg {
+  color: #ffffff;
+}
+
+
+
+
+
+/* ===============================
+   RIGHT FORM
+================================ */
+
+.contact-form {
+  flex: 1;
+  padding: 45px;
+  border-radius: 18px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color:white;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: whitesmoke;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: white;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: none;
+}
+
+/* Submit Button */
+.contact-form button {
+  margin-top: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background:orangered;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  color: blue;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    flex-direction: column;
+    padding: 60px 6%;
+  }
+
+  .contact-left h1 {
+    font-size: 36px;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-wrapper {
+    gap: 40px;
+  }
+
+  .contact-left h1 {
+    font-size: 28px;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+  .contact-wrapper { padding: 40px 6%; }
+  .info-card { padding: 20px; }
+  .contact-left { max-width: 100%; }
+  .contact-form button { width: 100%; }
+}
+
+@media (max-width: 360px) {
+  .contact-left h1 { font-size: 22px; }
+  .contact-left p { font-size: 14px; }
+  .contact-form { padding: 18px; }
+}

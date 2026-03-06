@@ -1,0 +1,52 @@
+:root{
+	--max-width: 1200px;
+	--gutter: 1rem;
+	--color-bg: #000;
+	--color-text: #fff;
+}
+
+/* Fluid typography */
+html{
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+/* Scale headings fluidly */
+h1{font-size: clamp(1.6rem, 4.5vw, 3.75rem); line-height:1.15}
+h2{font-size: clamp(1.25rem, 3.5vw, 2.25rem)}
+h3{font-size: clamp(1.05rem, 2.6vw, 1.5rem)}
+
+/* Page container utility */
+.container{max-width:var(--max-width); margin:0 auto; padding:0 calc(var(--gutter) * 1.5)}
+
+/* Generic section spacing that scales */
+.section{padding: clamp(2rem, 6vw, 6rem) 0}
+
+/* Make media responsive */
+img, svg, video, iframe{max-width:100%; height:auto; display:block}
+
+/* Make buttons adapt on small screens */
+.button{padding: clamp(0.6rem, 1.8vw, 0.9rem) clamp(0.9rem, 2.5vw, 1.5rem)}
+
+/* Small helpers */
+.hide-mobile{display:block}
+.hide-desktop{display:none}
+
+@media (max-width: 1024px){
+	.hide-mobile{display:block}
+}
+
+@media (max-width: 768px){
+	.container{padding:0 1rem}
+	.hide-mobile{display:none}
+	.hide-desktop{display:inline-block}
+}
+
+@media (max-width:480px){
+	body{font-size:14px}
+}
+
+/* Prefer touch-friendly tappable areas */
+button, a.button{min-height:44px}

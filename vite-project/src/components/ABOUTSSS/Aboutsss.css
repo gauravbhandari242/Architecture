@@ -1,0 +1,177 @@
+/* ===============================
+   ABOUT AREA
+================================ */
+
+.about-area {
+  width: 100%;
+  background: #ffffff;
+  padding: 10px 7%;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ===============================
+   TOP ROW
+================================ */
+
+.about-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+}
+
+/* LEFT COLUMN */
+
+.about-col-left {
+  flex: 1;
+}
+
+.about-label {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #555;
+  font-weight: 500;
+}
+
+.about-heading {
+  font-size: 44px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* RIGHT COLUMN */
+
+.about-col-right {
+  flex: 1;
+  max-width: 520px;
+}
+
+.about-col-right p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+
+}
+
+/* ===============================
+   IMAGE SECTION
+================================ */
+
+.about-banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-banner img {
+  width: 100%;
+
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ===============================
+   LARGE LAPTOP
+================================ */
+
+@media (max-width: 1200px) {
+
+  .about-row {
+    gap: 60px;
+  }
+
+  .about-heading {
+    font-size: 36px;
+  }
+
+  
+}
+
+/* ===============================
+   TABLET
+================================ */
+
+@media (max-width: 1024px) {
+
+  .about-area {
+    padding: 80px 6%;
+  }
+
+  .about-row {
+    gap: 40px;
+  }
+
+  .about-heading {
+    font-size: 32px;
+  }
+
+  .about-col-right p {
+    font-size: 15px;
+  }
+
+  
+}
+
+/* ===============================
+   SMALL TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+  .about-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-col-right {
+    max-width: 100%;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .about-area {
+    padding: 70px 5%;
+  }
+
+  .about-heading {
+    font-size: 26px;
+  }
+
+  .about-col-right p {
+    font-size: 14px;
+    line-height: 1.7;
+  
+  }
+}
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+  .about-area{padding: 20px;}
+
+  .about-heading {
+    font-size: 20px;
+  
+  }
+
+  .about-heading {
+    font-size: 20px;
+  }
+
+  .about-banner img {
+    height: 240px;
+  }
+}

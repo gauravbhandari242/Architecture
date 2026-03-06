@@ -1,0 +1,234 @@
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ============================= */
+/* WORKING SECTION */
+/* ============================= */
+
+.Working {
+  padding: 30px 2%;
+  position: relative;
+}
+
+.scrol {
+  display: flex;
+  justify-content: space-between; /* push left and right */
+  align-items: center;
+  width: 100%;
+
+  
+}
+
+/* LEFT SIDE */
+.heading-left {
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* Small Heading */
+.Working-GET {
+  font-size: 12px;
+  
+}
+
+/* Main Heading */
+.Working-POST {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* RIGHT SIDE */
+.explore-wrapper {
+  text-align: right;
+}
+
+.explore-btn {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.explore-btn:hover {
+  opacity: 0.7;
+}
+
+
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
+/* Wrapper controls alignment */
+.explore-wrapper {
+  display: flex;
+  justify-content: flex-end;   /* Moves button to right */
+  margin-bottom: 0px;
+}
+
+/* Button */
+.explore-btn {
+  padding: 12px 26px;
+  background: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: black;
+  color: white;
+  
+  
+}
+
+/* ============================= */
+/* SCROLL CONTAINER */
+/* ============================= */
+
+.container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Hide Scrollbar */
+.container::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================= */
+/* CARD WRAPPER */
+/* ============================= */
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.cardd {
+  flex: 0 0 320px;  /* fixed width but responsive */
+}
+
+/* Image Fix */
+.cardd img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Title */
+.cardd p {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  .Working {
+    padding: 60px 6%;
+  }
+
+  .Working-POST {
+    font-size: 26px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .Working {
+    padding: 50px 20px;
+  }
+
+  .Working-POST {
+    font-size: 20px;
+  }
+
+  .cardd {
+    flex: 0 0 85%;
+  }
+
+  .cardd img {
+    height: 200px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .Working {
+    padding: 40px 15px;
+  }
+
+  .Working-POST {
+    font-size: 18px;
+  }
+
+  .Working-GET {
+    font-size: 12px;
+  }
+
+  .cardd {
+    flex: 0 0 90%;
+  }
+
+  .cardd img {
+    height: 180px;
+  }
+
+  .cardd p {
+    font-size: 13px;
+  }
+
+  .explore-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 480px) {
+
+  .explore-wrapper {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    margin: 0;
+  }
+
+  .explore-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  
+    
+  }
+
+}

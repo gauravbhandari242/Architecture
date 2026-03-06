@@ -1,0 +1,190 @@
+/* ===============================
+   SERVICES SECTION
+================================ */
+
+.services-section {
+  width: 100%;
+  background: #0b1a2f;
+  padding: 70px 0; /* remove side padding */
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===============================
+   HEADER (LEFT SIDE ONLY)
+================================ */
+
+.services-header {
+  padding-left: 8%;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.section-heading {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+/* ===============================
+   SERVICES CONTAINER (RIGHT SIDE)
+================================ */
+
+.services-container {
+  width: 75%;
+  margin-left: auto;  /* push content to right */
+  padding-right: 9%;
+}
+
+/* ===============================
+   EACH SERVICE ITEM
+================================ */
+
+.service-wrapper {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* TOP ROW */
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bolder;
+  
+}
+
+.service-item:hover {
+  opacity: 0.8;
+}
+
+/* LEFT SIDE */
+.service-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  color: white;
+}
+
+.service-number {
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;
+}
+
+.service-title {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* PLUS / MINUS ICON */
+.service-icon {
+  font-size: 28px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+/* ===============================
+   ACCORDION CONTENT
+================================ */
+
+.service-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.service-content.active {
+  max-height: 520px;
+}
+
+.content-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px 0px;
+
+  align-items: flex-end;   /* 🔥 right side */
+  text-align:left ;       /* 🔥 text right */
+}
+
+/* IMAGE */
+.content-inner img {
+  width: 250px;
+  display: block;
+  
+}
+
+/* PARAGRAPH */
+.content-inner p {
+  max-width: 920px;
+  line-height: 1.7;
+  color: white;
+  padding: 0px 90px 0px 0px;
+  margin: 0px;
+  text-align: left;
+}
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1100px) {
+
+  .services-container {
+    width: 85%;
+  }
+
+  .section-heading {
+    font-size: 36px;
+  }
+
+  .service-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  /* Reset to full width on mobile */
+  .services-container {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 8%;
+  }
+
+  .services-header {
+    padding-left: %;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  
+  }
+
+  .service-left {
+    gap: 20px;
+  }
+
+  .service-title {
+    font-size: 22px;
+  }
+
+  .content-inner {
+    flex-direction: column;
+  }
+
+  .content-inner img {
+    width: 100%;
+  }
+
+}
