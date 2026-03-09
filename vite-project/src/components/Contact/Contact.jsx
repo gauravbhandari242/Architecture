@@ -1,13 +1,23 @@
+import "./contact.css";
+import { useState } from "react";
 import { FaYoutube, FaFacebookF, FaInstagram } from "react-icons/fa";
 
-export default function Contact  () {
+export default function Contact() {
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // page reload stop
+
+    setShowPopup(true); // popup show
+
+    e.target.reset(); // form clean
+  };
+
   return (
     <section className="contact-section">
       <div className="contact-wrapper">
 
-        
-
-        {/* dark overlay */}
         <div id="Contact" className="overlay"></div>
 
         {/* LEFT CONTENT */}
@@ -21,6 +31,7 @@ export default function Contact  () {
           </p>
 
           <div className="info-card">
+
             <div>
               <small>Email</small>
               <p>sashaktarchitect@gmail.com</p>
@@ -34,52 +45,41 @@ export default function Contact  () {
             <div>
               <small>Location</small>
               <p>
-                Raipur Rd, Kailash Vihar, Ladpur, Dehradun,
-                Uttarakhand 248008
+                Raipur Rd, Kailash Vihar, Ladpur,
+                Dehradun, Uttarakhand 248008
               </p>
             </div>
+
           </div>
 
-          {/* SOCIAL ICONS */}
           <div className="socials">
-  <a 
-    href="https://www.facebook.com/sashaktarchitect" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <FaFacebookF />
-  </a>
 
-  <a 
-    href="https://www.instagram.com/sashaktarchitect" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <FaInstagram />
-  </a>
+            <a href="https://www.facebook.com/sashaktarchitect" target="_blank">
+              <FaFacebookF />
+            </a>
 
-  <a 
-    href="https://www.youtube.com/@sashaktarchitect" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <FaYoutube />
-  </a>
-</div>
+            <a href="https://www.instagram.com/sashaktarchitect" target="_blank">
+              <FaInstagram />
+            </a>
 
+            <a href="https://www.youtube.com/@sashaktarchitect" target="_blank">
+              <FaYoutube />
+            </a>
+
+          </div>
         </div>
 
         {/* RIGHT FORM */}
-        <div className="contact-form">
-        
+        <form className="contact-form" onSubmit={handleSubmit}>
+
           <label>Enter your Name</label>
-          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Name" required />
 
           <label>Enter your Email</label>
-          <input type="email" placeholder="Email" />
+          <input type="email" placeholder="Email" required />
 
           <label>Enter your Contact</label>
-          <input type="tel" placeholder="Phone Number" />
+          <input type="tel" placeholder="Phone Number" required />
 
           <label>What Services are Required</label>
           <input type="text" placeholder="Services Required" />
@@ -88,9 +88,23 @@ export default function Contact  () {
           <textarea placeholder="Message"></textarea>
 
           <button type="submit">Submit Message</button>
-        </div>
+
+        </form>
 
       </div>
+
+      {/* POPUP */}
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-box">
+            <h2>✅ Message Sent</h2>
+            <p>Thank you! We will contact you soon.</p>
+
+            <button onClick={() => setShowPopup(false)}>Close</button>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 }

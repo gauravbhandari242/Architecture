@@ -1,9 +1,11 @@
+import "./Header.css";
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // 🔥 Body scroll disable logic
+  // Body scroll disable when menu open
   useEffect(() => {
     if (menuOpen) {
       document.body.classList.add("no-scroll");
@@ -18,6 +20,7 @@ export default function Header() {
 
   return (
     <div className="img-back">
+      
       {/* NAVBAR */}
       <nav className="navbar">
         <h1 className="logo">
@@ -29,22 +32,40 @@ export default function Header() {
           {menuOpen ? "✕" : "☰"}
         </div>
 
+        {/* MENU */}
         <ul className={`menu ${menuOpen ? "active" : ""}`}>
-          <li><a href="/" onClick={handleClose}>Home</a></li>
-          <li><a href="Founder" onClick={handleClose}>About</a></li>
-          <li><a href="Servicecopy" onClick={handleClose}>Services</a></li>
-          <li><a href="ABOUTSSS" onClick={handleClose}>Work</a></li>
-          <li><a href="#Blog" onClick={handleClose}>Blog</a></li>
-          <li><a href="#Contact" onClick={handleClose}>Contact</a></li>
+          <li>
+            <Link to="/" onClick={handleClose}>Home</Link>
+          </li>
 
           <li>
-            <a
-              href="#Contact"
+            <Link to="/Aboutsss" onClick={handleClose}>About</Link>
+          </li>
+
+          <li>
+            <Link to="/Servicecopy" onClick={handleClose}>Services</Link>
+          </li>
+
+          <li>
+            <Link to="/Working" onClick={handleClose}>Work</Link>
+          </li>
+
+          <li>
+            <Link to="/Blog" onClick={handleClose}>Blog</Link>
+          </li>
+
+          <li>
+            <Link to="/Contact" onClick={handleClose}>Contact</Link>
+          </li>
+
+          <li>
+            <Link
+              to="/Contact"
               className="nabvar-btn"
               onClick={handleClose}
             >
               Book a Consultation
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
@@ -64,15 +85,17 @@ export default function Header() {
           </p>
 
           <div className="hero-btn">
-            <a href="#Contact" className="btn primary">
+            <Link to="/Contact" className="btn primary">
               Book a Consultation
-            </a>
-            <a href="#Work" className="btn secondary">
+            </Link>
+
+            <Link to="/Working" className="btn secondary">
               Explore Our Work
-            </a>
+            </Link>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

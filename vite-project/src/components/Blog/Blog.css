@@ -8,153 +8,183 @@ body {
   overflow-x: hidden;
 }
 
-.faq {
-  width: 100%;
-  padding: 20px 9%;
-  background:whitesmoke;
-  font-family: "Poppins", sans-serif;
-  color: black;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  
+
+.design {
+  padding: 60px 2%;
+  background-color: whitesmoke;
+  overflow: hidden;
 }
 
-/* ==========================
-   GRID LAYOUT
-========================== */
-
-.faq-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  align-items: start;
-}
-
-/* ==========================
-   LEFT COLUMN
-========================== */
-
-/* Heading (Top Left) */
-.faq-lefte {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-
-/* Image (Below Heading) */
-.faq-left {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
-.faq-left img {
-  width: 357px;
-  object-fit: cover;
-  margin-bottom:30px;
-}
-
-/* ==========================
-   RIGHT COLUMN
-========================== */
-
-/* FAQ List (Full Right Side) */
-.faq-list {
-  grid-column: 2 / 3;
-  grid-row: 1 / 3; /* spans full height */
-  width: 100%;
-  margin-top: 20%
-  
-}
-
-/* ==========================
-   TEXT STYLING
-========================== */
-
-.faq-tag {
-  font-size: 16px;
-  color: black;
-  text-align: center;
-}
-
-.faq-lefte h2 {
-  font-size: 30px;
-  font-weight: bold;
-  color: black;
-;
-  
-}
-
-/* ==========================
-   FAQ ITEMS
-========================== */
-
-.faq-item {
-  padding: 20px;
-  border-bottom: 1px solid #2a2a2a;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-  margin-top: 20px;
-  
-  
-}
-
-.faq-item:hover {
-  border-color: #ffffff;
-}
-
-.faq-question {
+.desing-hed {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 17px;
-  font-weight: 700;
-
+  width: 100%;
+  
 }
 
-.arrow {
+/* LEFT SIDE */
+.design-left {
+  max-width: 600px;
+}
+
+.design-h1 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  
+}
+
+.design-h2 {
+  font-size: 28px;
+  font-weight: bold;
+  
+}
+
+.desing-hed p {
   font-size: 15px;
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+/* RIGHT SIDE BUTTON */
+.Work-scroll {
+  text-align: right;
+}
+
+.Work-scroll button {
+  padding: 12px 25px;
+  border: none;
+  background: whitesmoke;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.Work-scroll button:hover {
+  opacity: 0.8;
+}
+
+
+/* ===== Blogs Container (Horizontal Scroll, No Scrollbar) ===== */
+.blogs-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 18px;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge */
+}
+
+.blogs-container::-webkit-scrollbar {
+  display: none;                /* Chrome / Safari */
+}
+
+/* ===== Blog Card ===== */
+.image {
+  width: 357px;
+  border-radius: 14px;
+  
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
-.faq-item.open .arrow {
-  transform: rotate(180deg);
+.image:hover {
+  transform: translateY(-6px);
 }
 
-.faq-answer {
-  margin-top: 14px;
-  font-size: 15px;
-  color: black;
-  line-height: 1.7;
+/* ===== Image ===== */
+.image img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: 5px;
 }
-@media (max-width: 900px) {
-  .faq-wrapper {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    row-gap: 40px;
+
+/* ===== Title ===== */
+.image h1 {
+  font-size: 18px;
+  color:black;
+
+  line-height: 1.4;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+
+/* ===== Description ===== */
+.image p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 2px;
+  
+  
+
+}
+
+/* ===== Button ===== */
+.image button {
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* ===== Optional: Better Drag UX ===== */
+.blogs-container {
+  cursor: grab;
+}
+
+.blogs-container:active {
+  cursor: grabbing;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .design {
+    padding: 40px 20px;
   }
 
-  .faq-lefte,
-  .faq-left,
-  .faq-list {
-    grid-column: 1 / -1;
-    grid-row: auto;
+  .design-h2 {
+    font-size: 28px;
   }
 
-  .faq-lefte h2 {
-    font-size: 30px;
-  }
-
-  .faq-left img {
-    max-width: 100%;
-    width: 100%;
-    
+  .image {
+    min-width: 260px;
   }
 }
 
 @media (max-width: 480px) {
-  .faq { padding: 10px 6%; }
-  .faq-lefte h2 { font-size: 24px; }
-  .faq-tag { font-size: 14px; }
+  .design { padding: 28px 12px; }
+  .image { min-width: 100%; width: 100%; }
+  .design p { max-width: 100%; }
+}
+/* Make section relative */
+.design {
+  position: relative;
+}
+
+/* Phone Screen Only */
+@media (max-width: 480px) {
+
+  .Work-scroll {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    margin: 0;
+  }
+
+  .Work-scroll button {
+    padding: 10px 16px;
+    font-size: 13px;
+    border-radius: 25px;
+    
+  }
+
 }

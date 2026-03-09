@@ -1,5 +1,4 @@
- 
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,27 +8,27 @@ body {
   overflow-x: hidden;
 }
 
- .contact-section{
+.contact-section {
   position: relative;
-  width: 100%; 
-    background-image: url("/img/5f338df9e592125624d31fbb6b4f017faa6d02a4.png");
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  background-image: url("/img/5f338df9e592125624d31fbb6b4f017faa6d02a4.png");
+  background-size: cover;
+  background-position: center;
   font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
-  z-index:0 ;
-  
+  z-index: 0;
 }
 
-.contact-form input{ 
-  color:white;
+.contact-form input {
+  color: white;
 }
-/* Overlay (for depth effect) */
+
+/* Overlay */
 .overlay {
   position: absolute;
   inset: 0;
-  z-index:0 ;
+  z-index: 0;
 }
 
 /* Wrapper */
@@ -51,14 +50,13 @@ body {
 .contact-left {
   flex: 1;
   max-width: 600px;
-  
 }
 
 .contact-left span {
   font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color:white;
+  color: white;
 }
 
 .contact-left h1 {
@@ -66,7 +64,7 @@ body {
   margin: 20px 0;
   font-weight: 600;
   line-height: 1.2;
-  color:white;
+  color: white;
 }
 
 .contact-left p {
@@ -76,6 +74,7 @@ body {
 }
 
 /* Info Card */
+
 .info-card {
   padding: 30px;
   border-radius: 16px;
@@ -94,9 +93,8 @@ body {
 
 .info-card small {
   font-size: 16px;
-  color:white;
+  color: white;
   letter-spacing: 1px;
-  
 }
 
 .info-card p {
@@ -105,7 +103,6 @@ body {
   color: #fff;
 }
 
-/* Social Icons */
 /* ============================= */
 /* SOCIAL ICONS */
 /* ============================= */
@@ -131,15 +128,13 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Icon size */
 .socials a svg {
   font-size: 20px;
   transition: 0.3s ease;
 }
 
-/* Hover Effect */
 .socials a:hover {
-  background-color: #2563eb; /* premium blue */
+  background-color: #2563eb;
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
@@ -147,10 +142,6 @@ body {
 .socials a:hover svg {
   color: #ffffff;
 }
-
-
-
-
 
 /* ===============================
    RIGHT FORM
@@ -169,7 +160,7 @@ body {
 .contact-form label {
   font-size: 13px;
   margin-bottom: 6px;
-  color:white;
+  color: white;
 }
 
 .contact-form input,
@@ -202,12 +193,13 @@ body {
 }
 
 /* Submit Button */
+
 .contact-form button {
   margin-top: 10px;
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background:orangered;
+  background: orangered;
   color: white;
   font-weight: 600;
   font-size: 15px;
@@ -220,7 +212,6 @@ body {
   transform: translateY(-3px);
   color: blue;
 }
-
 
 /* ===============================
    RESPONSIVE
@@ -253,14 +244,99 @@ body {
   .contact-form {
     padding: 30px;
   }
-  .contact-wrapper { padding: 40px 6%; }
-  .info-card { padding: 20px; }
-  .contact-left { max-width: 100%; }
-  .contact-form button { width: 100%; }
+
+  .contact-wrapper {
+    padding: 40px 6%;
+  }
+
+  .info-card {
+    padding: 20px;
+  }
+
+  .contact-left {
+    max-width: 100%;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 360px) {
-  .contact-left h1 { font-size: 22px; }
-  .contact-left p { font-size: 14px; }
-  .contact-form { padding: 18px; }
+  .contact-left h1 {
+    font-size: 22px;
+  }
+
+  .contact-left p {
+    font-size: 14px;
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+}
+
+/* ===============================
+   POPUP SUCCESS MESSAGE
+================================ */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  animation: popupFade 0.3s ease;
+}
+
+.popup-box h2 {
+  color: green;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.popup-box p {
+  color: #333;
+  font-size: 14px;
+}
+
+.popup-box button {
+  margin-top: 18px;
+  padding: 10px 20px;
+  border: none;
+  background: orangered;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.popup-box button:hover {
+  background: black;
+}
+
+@keyframes popupFade {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

@@ -1,4 +1,4 @@
-
+import "./Work.css"
 
 function Journey() {
   return (

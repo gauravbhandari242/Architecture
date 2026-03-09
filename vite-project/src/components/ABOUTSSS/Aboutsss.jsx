@@ -1,3 +1,4 @@
+import "./Aboutsss.css"
 export default function About() {
   return (
     <section className="about-area">

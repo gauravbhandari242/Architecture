@@ -1,3 +1,4 @@
+import "./Service.css"
 import React, { useState } from "react";
 
 

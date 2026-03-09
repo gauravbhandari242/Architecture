@@ -1,4 +1,4 @@
-import React from "react";
+import "./Customer.css"
 
 const testimonialData = [
   {
