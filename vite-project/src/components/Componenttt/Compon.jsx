@@ -1,5 +1,6 @@
 import "./compon.css"
 import React, { useState } from "react";
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 
 const faqData = [
@@ -76,7 +77,7 @@ export default function Blog() {
                 <div className="faq-question">
                   <span>{item.question}</span>
                   <span className="arrow">
-                    {openIndex === index ? "x" : "✓"}
+                    {openIndex === index ? <FiChevronUp /> : <FiChevronDown />}
                   </span>
                 </div>
 

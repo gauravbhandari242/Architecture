@@ -1,4 +1,6 @@
-import "./Founder.css"
+import "./Founder.css";
+import { Link } from "react-router-dom";
+
 export default function Founder() {
   return (
     <section className="founder-section">
@@ -6,7 +8,12 @@ export default function Founder() {
 
         {/* LEFT IMAGE */}
         <div className="founder-image">
-          <img src="/img/33162637289a621f95c993ce0631f412d8d2be87.png" alt="Founder" />
+          <Link to="/abouts">
+            <img
+              src="/img/33162637289a621f95c993ce0631f412d8d2be87.png"
+              alt="Founder"
+            />
+          </Link>
         </div>
 
         {/* RIGHT CONTENT */}
@@ -14,7 +21,9 @@ export default function Founder() {
           <span className="founder-tag">Founder</span>
 
           <h2>
-            Design Led by Clarity and Purpose
+            <Link to="/abouts" className="founder-title-link">
+              Design Led by Clarity and Purpose
+            </Link>
           </h2>
 
           <p>
@@ -24,13 +33,9 @@ export default function Founder() {
             commercial projects, interiors, boundary design, and project management
             consultancy, the founder brings a balanced approach that bridges creativity
             and practicality.
-            The studio is founded by an architect with a strong focus on
-            thoughtful design, functional planning, and disciplined project execution.
-            With hands-on experience across architectural design, residential and
-            commercial projects, interiors, boundary design, and project management
-            consultancy, the founder brings a balanced approach that bridges creativity
-            and practicality.
           </p>
+
+        
         </div>
 
       </div>

@@ -11,6 +11,7 @@
 body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
+  
 }
 
 /* ============================= */
@@ -18,8 +19,10 @@ body {
 /* ============================= */
 
 .Working {
-  padding: 30px 2%;
+  padding: 10px 4%;
   position: relative;
+  
+  
 }
 
 .scrol {
@@ -27,6 +30,7 @@ body {
   justify-content: space-between; /* push left and right */
   align-items: center;
   width: 100%;
+  
 
   
 }
@@ -39,19 +43,23 @@ body {
 
 /* Small Heading */
 .Working-GET {
-  font-size: 12px;
+  font-size: 14px;
   
 }
 
 /* Main Heading */
 .Working-POST {
-  font-size: 26px;
+  font-size: 29px;
   font-weight: bold;
+
+  
 }
 
 /* RIGHT SIDE */
 .explore-wrapper {
   text-align: right;
+  font-size: 20px;
+  
 }
 
 .explore-btn {
@@ -59,6 +67,8 @@ body {
   font-weight: 500;
   color: black;
   transition: 0.3s ease;
+  font-size: 20px;
+  
 }
 
 .explore-btn:hover {
@@ -76,19 +86,20 @@ body {
   display: flex;
   justify-content: flex-end;   /* Moves button to right */
   margin-bottom: 0px;
+  font-size: 20px;
 }
 
 /* Button */
 .explore-btn {
   padding: 12px 26px;
-  background: white;
+  background:;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 20px;
   transition: all 0.3s ease;
 }
 
 .explore-btn:hover {
-  background: black;
+  background: blue;
   color: white;
   
   
@@ -135,9 +146,9 @@ body {
 /* Image Fix */
 .cardd img {
   width: 100%;
-  height: 220px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 8px;
+  
   display: block;
 }
 
@@ -172,15 +183,6 @@ body {
   .Working-POST {
     font-size: 20px;
   }
-
-  .cardd {
-    flex: 0 0 85%;
-  }
-
-  .cardd img {
-    height: 200px;
-  }
-
 }
 
 @media (max-width: 480px) {
@@ -197,16 +199,9 @@ body {
     font-size: 12px;
   }
 
-  .cardd {
-    flex: 0 0 90%;
-  }
 
   .cardd img {
     height: 180px;
-  }
-
-  .cardd p {
-    font-size: 13px;
   }
 
   .explore-btn {
@@ -223,12 +218,11 @@ body {
     right: 15px;
     margin: 0;
   }
-
+  .Working{padding: 30px 0px 50px;}
+  .heading-left{padding: 14px;}
   .explore-btn {
     padding: 10px 16px;
-    font-size: 13px;
-  
-    
+    font-size: 16px;    
   }
 
 }

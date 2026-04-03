@@ -6,11 +6,14 @@
 
 body {
   overflow-x: hidden;
+  background-color:whitesmoke;
+  
 }
 
 .contact-section {
   position: relative;
-  width: 100%;
+  margin: 60px;
+  border-radius: 40px;
   background-image: url("/img/5f338df9e592125624d31fbb6b4f017faa6d02a4.png");
   background-size: cover;
   background-position: center;
@@ -18,6 +21,10 @@ body {
   display: flex;
   align-items: center;
   z-index: 0;
+  
+  
+  
+  
 }
 
 .contact-form input {
@@ -25,6 +32,7 @@ body {
 }
 
 /* Overlay */
+
 .overlay {
   position: absolute;
   inset: 0;
@@ -32,28 +40,29 @@ body {
 }
 
 /* Wrapper */
+
 .contact-wrapper {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 80px 8%;
+  padding: 50px 5%;
   display: flex;
   justify-content: space-between;
-  gap: 70px;
+  gap: 100px;
   color: #fff;
 }
 
 /* ===============================
-   LEFT CONTENT
+LEFT CONTENT
 ================================ */
 
 .contact-left {
-  flex: 1;
-  max-width: 600px;
+  flex: 0.9;
+  max-width: 400px;
 }
 
 .contact-left span {
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: white;
@@ -68,7 +77,7 @@ body {
 }
 
 .contact-left p {
-  font-size: 15px;
+  font-size: 16px;
   color: white;
   margin-bottom: 32px;
 }
@@ -76,36 +85,32 @@ body {
 /* Info Card */
 
 .info-card {
-  padding: 30px;
+  padding: 24px;
   border-radius: 16px;
   backdrop-filter: blur(4px);
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .info-card div {
-  margin-bottom: 20px;
-}
-
-.info-card div:last-child {
-  margin-bottom: 0;
+  margin-bottom: 16px;
 }
 
 .info-card small {
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   letter-spacing: 1px;
 }
 
 .info-card p {
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 16px;
   color: #fff;
 }
 
-/* ============================= */
-/* SOCIAL ICONS */
-/* ============================= */
+/* =============================
+SOCIAL ICONS
+============================= */
 
 .socials {
   display: flex;
@@ -115,8 +120,8 @@ body {
 }
 
 .socials a {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: #1a1a1a;
   display: flex;
@@ -129,28 +134,24 @@ body {
 }
 
 .socials a svg {
-  font-size: 20px;
-  transition: 0.3s ease;
+  font-size: 22px;
 }
 
 .socials a:hover {
   background-color: #2563eb;
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.socials a:hover svg {
-  color: #ffffff;
+  transform: translateY(-5px);
 }
 
 /* ===============================
-   RIGHT FORM
+RIGHT FORM
 ================================ */
 
 .contact-form {
-  flex: 1;
-  padding: 45px;
-  border-radius: 18px;
+  flex: 0.9;              /* form size kam */
+  max-width: 460px;       /* width kam */
+  margin-left: auto;
+  padding: 28px;
+  border-radius: 14px;
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
@@ -158,21 +159,21 @@ body {
 }
 
 .contact-form label {
-  font-size: 13px;
-  margin-bottom: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
   color: white;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 22px;
-  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
   border: 1px solid white;
   background: transparent;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   outline: none;
   transition: all 0.3s ease;
 }
@@ -180,44 +181,39 @@ body {
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: whitesmoke;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: white;
+  font-size: 14px;
 }
 
 .contact-form textarea {
-  min-height: 130px;
+  min-height: 120px;
   resize: none;
 }
 
-/* Submit Button */
-
 .contact-form button {
-  margin-top: 10px;
-  padding: 15px;
+  margin-top: 20px;
+  padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   background: orangered;
   color: white;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
   background: #ffffff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   color: blue;
 }
 
 /* ===============================
-   RESPONSIVE
+RESPONSIVE
 ================================ */
 
 @media (max-width: 1024px) {
+
   .contact-wrapper {
     flex-direction: column;
     padding: 60px 6%;
@@ -229,40 +225,45 @@ body {
 
   .contact-form {
     width: 100%;
+    max-width: 100%;
+    margin-left: 0;
   }
+
 }
 
 @media (max-width: 600px) {
+
   .contact-wrapper {
     gap: 40px;
+    padding: 120px 6%;
   }
+  .contact-section{margin: 0px;
+  border-radius: 0px;}
 
   .contact-left h1 {
     font-size: 28px;
   }
 
   .contact-form {
-    padding: 30px;
+    padding: 24px;
   }
-
-  .contact-wrapper {
-    padding: 40px 6%;
-  }
+  
 
   .info-card {
-    padding: 20px;
-  }
-
-  .contact-left {
-    max-width: 100%;
+    padding: 18px;
   }
 
   .contact-form button {
     width: 100%;
   }
+  .contact-form input::placeholder,
+.contact-form textarea::placeholder{font-size: 14px;}
+
+
 }
 
 @media (max-width: 360px) {
+
   .contact-left h1 {
     font-size: 22px;
   }
@@ -272,12 +273,15 @@ body {
   }
 
   .contact-form {
-    padding: 18px;
+    padding: 16px;
   }
+  
+  
+
 }
 
 /* ===============================
-   POPUP SUCCESS MESSAGE
+POPUP SUCCESS MESSAGE
 ================================ */
 
 .popup {
@@ -286,7 +290,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,7 +327,6 @@ body {
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .popup-box button:hover {
@@ -331,12 +334,15 @@ body {
 }
 
 @keyframes popupFade {
+
   from {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
   }
+
 }

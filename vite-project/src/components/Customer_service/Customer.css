@@ -41,13 +41,13 @@ body {
 }
 
 .tag {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 2px;
   margin-bottom: 5px;
 }
 
 .section-title {
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
   
 }
@@ -134,7 +134,7 @@ body {
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: #444;
   margin-bottom: 18px;
@@ -154,12 +154,12 @@ body {
 }
 
 .client h4 {
-  font-size: 14px;
+  font-size: 24px;
   margin: 0;
 }
 
 .client span {
-  font-size: 12px;
+  font-size: 14px;
   color: #777;
 }
 
@@ -206,11 +206,12 @@ body {
     bottom: 20px;
     right: 15px;
     width: auto;
+    
   }
 
   .testimonial-scroll button {
     padding: 10px 18px;
-    font-size: 13px;
+    font-size: 16px;
     border-radius: 25px;
   }
 
@@ -223,4 +224,10 @@ body {
     width: 100%;
   }
 
+  .tag{
+    font-size: 14px;
+  }
+  .section-title{
+    font-size: 24px;
+  }
 }

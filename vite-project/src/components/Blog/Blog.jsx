@@ -1,3 +1,4 @@
+import { Routes, Route, Link } from "react-router-dom";
 import "./Blog.css";
 
 const blogs = [
@@ -47,10 +48,10 @@ function Components() {
   </div>
 
   <div className="Work-scroll">
-    <button>
-      Explore All Projects <span>→</span>
-    </button>
-  </div>
+  <Link to="/explore-all-blog" className="explore-all-btn">
+    Explore All Blog <span>→</span>
+  </Link>
+</div>
 
 </div>
 

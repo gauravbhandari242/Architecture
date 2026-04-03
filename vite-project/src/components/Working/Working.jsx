@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"; // 👈 import karo
 import "./Working.css"
 const projects = [
   {
@@ -49,10 +49,10 @@ const Working = () => {
   </div>
 
   <div className="explore-wrapper">
-    <a href="/projects" className="explore-btn">
-      Explore All Projects →
-    </a>
-  </div>
+  <Link to="/projects" className="explore-btn">
+    Explore All Projects →
+  </Link>
+</div>
 
 </div>
 

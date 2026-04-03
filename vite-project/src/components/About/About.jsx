@@ -1,3 +1,4 @@
+import AboutPage from "../abouts/AboutPage";
 import "./About.css";
 
 function About() {
@@ -48,6 +49,7 @@ function About() {
         </div>
         </div>
       </div>
+    
     </>
   );
 }
