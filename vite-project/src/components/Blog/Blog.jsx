@@ -62,7 +62,7 @@ function Components() {
 
             <h1>{blog.title}</h1>
             <p>{blog.description}</p>
-            <button>Read more <span>→</span></button>
+            <Link to="/exploreblog">Read more <span>→</span></Link>
           </div>
           
         ))}

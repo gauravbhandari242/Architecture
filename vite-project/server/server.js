@@ -46,6 +46,7 @@ const pages = {
       "5. Processing Time: Refunds are processed within 5-7 working days."
     ]
   }
+  
 };
 
 // =====================

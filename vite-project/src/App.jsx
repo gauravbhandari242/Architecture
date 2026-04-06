@@ -10,8 +10,8 @@ import Component from "./components/Componenttt/Compon";
 import Service from "./components/Servicecopy/Service";
 import About from "./components/About/About";
 import Work from "./components/work/Work";
-import Working from "./components/working/Working";
-import Blog from "./components/blog/Blog";
+import Working from "./components/Working/Working";
+import Blog from "./components/Blog/Blog";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/FooterSection/Footer";
 import Customer from "./components/Customer_service/Customer";
@@ -19,8 +19,8 @@ import Abouts from "./components/abouts/AboutPage";
 import Founder from "./components/Founder/Founder";
 
 // Pages
-import ExploreButton from "./components/working/explorework";
-import ExploreAllBlogPage from "./components/blog/exploreblog";
+import ExploreButton from "./components/Working/explorework";
+import ExploreAllBlogPage from "./components/Blog/exploreblog";
 import TestimonialsPage from "./components/Customer_service/TestimonialsPage.jsx";
 
 
@@ -36,7 +36,7 @@ import AboutPage from "./components/abouts/AboutPage";
 /* HOME PAGE */
 function Home() {
   return (
-    <>
+    <> 
       <Hero />
       <About />
       <Service />

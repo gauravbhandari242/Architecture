@@ -62,7 +62,7 @@ export default function Blog() {
         {/* LEFT IMAGE */}
         <div className="faq-left">
           <img
-            src="0086eda015496c49ada9a2eb92f069946222ebde.png"
+            src="img/123.png.jpeg"
             alt="Architecture"
           />
         </div>

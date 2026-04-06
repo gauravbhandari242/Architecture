@@ -31,21 +31,27 @@ const TestimonialsPage = () => {
   const trackRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-scroll every 3s
+  // Auto Slide
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000);
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
   const prevSlide = () => {
-    setCurrentIndex(currentIndex === 0 ? testimonialData.length - 1 : currentIndex - 1);
+    setCurrentIndex(
+      currentIndex === 0 ? testimonialData.length - 1 : currentIndex - 1
+    );
   };
 
   const nextSlide = () => {
-    setCurrentIndex(currentIndex === testimonialData.length - 1 ? 0 : currentIndex + 1);
+    setCurrentIndex(
+      currentIndex === testimonialData.length - 1 ? 0 : currentIndex + 1
+    );
   };
 
-  // Swipe support for mobile
+  // Swipe Support
   useEffect(() => {
     const track = trackRef.current;
     let startX = 0;
@@ -69,32 +75,58 @@ const TestimonialsPage = () => {
     };
   }, [currentIndex]);
 
-  // Inline Styles
   const styles = {
-    section: { padding: "120px 20px", maxWidth: "1200px", margin: "0 auto", fontFamily: "Arial, sans-serif" },
-    header: { textAlign: "center", marginBottom: "40px"  },
-    tag: { color: "black", fontWeight: "bold", letterSpacing: "2px" },
+    section: {
+      padding: "120px 20px  20px",
+      maxWidth: "700px",
+      margin: "0 auto",
+      fontFamily: "Arial, sans-serif",
+    },
+
+    header: { textAlign: "center", marginBottom: "40px" },
+    tag: { fontWeight: "bold", letterSpacing: "2px" },
     title: { fontSize: "32px", margin: "10px 0" },
-    subtitle: { fontSize: "16px", color: "#555" },
-    carouselWrapper: { position: "relative", overflow: "hidden" },
-    scrollArea: { overflow: "hidden" },
+    subtitle: { color: "#555" },
+
+    carouselWrapper: {
+      position: "relative",
+      overflow: "visible", // 👈 arrows outside dikhane ke liye
+    },
+
+    scrollArea: {
+      overflow: "hidden",
+    },
+
     scrollTrack: {
       display: "flex",
       transition: "transform 0.5s ease-in-out",
       transform: `translateX(-${currentIndex * 100}%)`,
     },
+
     card: {
       minWidth: "100%",
       padding: "40px",
-      margin: "20px",
       background: "#fff",
       borderRadius: "15px",
       boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
       textAlign: "left",
     },
+
     stars: { color: "#ffcc00", marginBottom: "15px" },
-    client: { display: "flex", alignItems: "center", marginTop: "20px" },
-    clientImg: { width: "50px", height: "50px", borderRadius: "50%", marginRight: "15px" },
+
+    client: {
+      display: "flex",
+      alignItems: "center",
+      marginTop: "20px",
+    },
+
+    clientImg: {
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      marginRight: "15px",
+    },
+
     arrow: {
       position: "absolute",
       top: "50%",
@@ -103,14 +135,17 @@ const TestimonialsPage = () => {
       color: "#fff",
       border: "none",
       fontSize: "24px",
-      padding: "10px",
+      padding: "12px",
       borderRadius: "50%",
       cursor: "pointer",
       zIndex: 10,
     },
-    arrowLeft: { left: "10px" },
-    arrowRight: { right: "10px" },
+
+    arrowLeft: { left: "-60px" },   // 👈 left side
+    arrowRight: { right: "-60px" }, // 👈 right side
+
     dots: { textAlign: "center", marginTop: "20px" },
+
     dot: {
       display: "inline-block",
       width: "12px",
@@ -120,6 +155,7 @@ const TestimonialsPage = () => {
       margin: "0 5px",
       cursor: "pointer",
     },
+
     dotActive: { background: "#ff6600" },
   };
 
@@ -128,11 +164,16 @@ const TestimonialsPage = () => {
       <div style={styles.header}>
         <h4 style={styles.tag}>TESTIMONIALS</h4>
         <h1 style={styles.title}>What Our Clients Say</h1>
-        <p style={styles.subtitle}>Real feedback from our happy clients</p>
+        <p style={styles.subtitle}>
+          Real feedback from our happy clients
+        </p>
       </div>
 
       <div style={styles.carouselWrapper}>
-        <button style={{ ...styles.arrow, ...styles.arrowLeft }} onClick={prevSlide}>
+        <button
+          style={{ ...styles.arrow, ...styles.arrowLeft }}
+          onClick={prevSlide}
+        >
           &#8592;
         </button>
 
@@ -142,8 +183,13 @@ const TestimonialsPage = () => {
               <div style={styles.card} key={index}>
                 <div style={styles.stars}>★★★★★</div>
                 <p>{item.text}</p>
+
                 <div style={styles.client}>
-                  <img style={styles.clientImg} src={item.img} alt={item.name} />
+                  <img
+                    style={styles.clientImg}
+                    src={item.img}
+                    alt={item.name}
+                  />
                   <div>
                     <h4>{item.name}</h4>
                     <span>{item.role}</span>
@@ -154,7 +200,10 @@ const TestimonialsPage = () => {
           </div>
         </div>
 
-        <button style={{ ...styles.arrow, ...styles.arrowRight }} onClick={nextSlide}>
+        <button
+          style={{ ...styles.arrow, ...styles.arrowRight }}
+          onClick={nextSlide}
+        >
           &#8594;
         </button>
       </div>
@@ -163,7 +212,11 @@ const TestimonialsPage = () => {
         {testimonialData.map((_, index) => (
           <span
             key={index}
-            style={currentIndex === index ? { ...styles.dot, ...styles.dotActive } : styles.dot}
+            style={
+              currentIndex === index
+                ? { ...styles.dot, ...styles.dotActive }
+                : styles.dot
+            }
             onClick={() => setCurrentIndex(index)}
           ></span>
         ))}
