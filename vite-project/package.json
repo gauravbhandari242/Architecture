@@ -7,11 +7,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "vite --host 0.0.0.0",
     "server": "node server/server.js",
-    "build": "vite build",
+    "build": "node build.js",
     "preview": "vite preview",
     "lint": "eslint ."
-    
-    
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
