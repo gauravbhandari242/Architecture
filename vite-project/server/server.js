@@ -1,33 +1,14 @@
 import express from "express";
 import cors from "cors";
-import path from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
-// =====================
-// Middleware
-// =====================
 app.use(cors());
 app.use(express.json());
 
 // =====================
-// Serve React build
-// =====================
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-app.use(express.static(path.join(__dirname, "../dist")));
-
-app.get("*", (req, res, next) => {
-  // Ignore API routes
-  if (req.path.startsWith("/api")) return next();
-  res.sendFile(path.join(__dirname, "../dist/index.html"));
-});
-
-// =====================
-// API routes
+// All pages data
 // =====================
 const pages = {
   privacy: {
@@ -41,6 +22,7 @@ const pages = {
       "5. Cookies: We may use cookies to enhance your browsing experience."
     ]
   },
+
   terms: {
     title: "Terms of Use",
     content: [
@@ -52,6 +34,7 @@ const pages = {
       "5. Termination: We reserve the right to suspend accounts that violate our terms."
     ]
   },
+
   refund: {
     title: "Refund Policy",
     content: [
@@ -63,33 +46,52 @@ const pages = {
       "5. Processing Time: Refunds are processed within 5-7 working days."
     ]
   }
+  
 };
 
-// GET page
+// =====================
+// Dynamic GET route
+// =====================
 app.get("/api/page/:type", (req, res) => {
   const pageType = req.params.type.toLowerCase();
-  if (pages[pageType]) res.json(pages[pageType]);
-  else res.status(404).json({ message: "Page not found" });
+
+  if (pages[pageType]) {
+    res.json(pages[pageType]);
+  } else {
+    res.status(404).json({ message: "Page not found" });
+  }
 });
 
-// POST new page
+// =====================
+// Optional: POST route to add new page dynamically
+// =====================
 app.post("/api/page", (req, res) => {
   const { type, title, content } = req.body;
+
   if (!type || !title || !content) {
     return res.status(400).json({ message: "All fields are required" });
   }
+
   const key = type.toLowerCase();
-  if (pages[key]) return res.status(400).json({ message: "Page already exists" });
+
+  if (pages[key]) {
+    return res.status(400).json({ message: "Page already exists" });
+  }
+
   pages[key] = { title, content };
   res.json({ message: "Page created successfully", data: pages[key] });
 });
 
+// =====================
 // Home route
-app.get("/api", (req, res) => {
+// =====================
+app.get("/", (req, res) => {
   res.send("API is running 🚀");
 });
 
+// =====================
 // Start server
+// =====================
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

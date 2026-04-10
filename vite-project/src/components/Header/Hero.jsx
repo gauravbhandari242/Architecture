@@ -21,7 +21,7 @@ export default function Hero() {
             Book a Consultation
           </Link>
 
-          <Link to="/Working" className="btn secondary">
+          <Link to="/explorework" className="btn secondary">
             Explore Our Work
           </Link>
         </div>
