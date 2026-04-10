@@ -1,0 +1,228 @@
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+/* ============================= */
+/* WORKING SECTION */
+/* ============================= */
+
+.Working {
+  padding: 10px 4%;
+  position: relative;
+  
+  
+}
+
+.scrol {
+  display: flex;
+  justify-content: space-between; /* push left and right */
+  align-items: center;
+  width: 100%;
+  
+
+  
+}
+
+/* LEFT SIDE */
+.heading-left {
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* Small Heading */
+.Working-GET {
+  font-size: 14px;
+  
+}
+
+/* Main Heading */
+.Working-POST {
+  font-size: 29px;
+  font-weight: bold;
+
+  
+}
+
+/* RIGHT SIDE */
+.explore-wrapper {
+  text-align: right;
+  font-size: 20px;
+  
+}
+
+.explore-btn {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+  transition: 0.3s ease;
+  font-size: 20px;
+  
+}
+
+.explore-btn:hover {
+  opacity: 0.7;
+}
+
+
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
+/* Wrapper controls alignment */
+.explore-wrapper {
+  display: flex;
+  justify-content: flex-end;   /* Moves button to right */
+  margin-bottom: 0px;
+  font-size: 20px;
+}
+
+/* Button */
+.explore-btn {
+  padding: 12px 26px;
+  background:;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: blue;
+  color: white;
+  
+  
+}
+
+/* ============================= */
+/* SCROLL CONTAINER */
+/* ============================= */
+
+.container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Hide Scrollbar */
+.container::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================= */
+/* CARD WRAPPER */
+/* ============================= */
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.cardd {
+  flex: 0 0 320px;  /* fixed width but responsive */
+}
+
+/* Image Fix */
+.cardd img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  
+  display: block;
+}
+
+/* Title */
+.cardd p {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  .Working {
+    padding: 60px 6%;
+  }
+
+  .Working-POST {
+    font-size: 26px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .Working {
+    padding: 50px 20px;
+  }
+
+  .Working-POST {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .Working {
+    padding: 40px 15px;
+  }
+
+  .Working-POST {
+    font-size: 18px;
+  }
+
+  .Working-GET {
+    font-size: 12px;
+  }
+
+
+  .cardd img {
+    height: 180px;
+  }
+
+  .explore-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 480px) {
+
+  .explore-wrapper {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    margin: 0;
+  }
+  .Working{padding: 30px 0px 50px;}
+  .heading-left{padding: 14px;}
+  .explore-btn {
+    padding: 10px 16px;
+    font-size: 16px;    
+  }
+
+}
