@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-export default function Refund() {
-  const [page, setPage] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/page/refund")
-      .then((res) => res.json())
-      .then((data) => {
-        setPage(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []); 
-
-  if (loading) return <p style={{ paddingTop: "130px", textAlign: "center" }}>Loading...</p>;
-
-  if (!page) return <p style={{ paddingTop: "130px", textAlign: "center" }}>Content not found.</p>;
-
+const Refund = () => {
   return (
-    <div style={{ paddingTop: "130px", maxWidth: "800px", margin: "auto" }}>
-      <h1>{page.title}</h1>
-      <p>{page.content}</p>
+    <div style={{ padding: "40px",paddingTop: "120px", maxWidth: "800px", margin: "auto" }}>
+      <h1>Refund Policy</h1>
+
+      <p>
+        We offer refunds under specific conditions.
+      </p>
+
+      <ul>
+        <li>Refunds must be requested within 7 days.</li>
+        <li>Valid reason is required for approval.</li>
+        <li>Some services are non-refundable.</li>
+        <li>Processing takes 5–7 working days.</li>
+      </ul>
     </div>
   );
-}
+};
+
+export default Refund;

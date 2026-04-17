@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-export default function Privacy() {
-  const [page, setPage] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/page/privacy") // backend API call
-      .then((res) => res.json())
-      .then((data) => {
-        setPage(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) return <p style={{ paddingTop: "130px", textAlign: "center" }}>Loading...</p>;
-
-  if (!page) return <p style={{ paddingTop: "130px", textAlign: "center" }}>Content not found.</p>;
-
+const Privacy = () => {
   return (
-    <div style={{ paddingTop: "130px", maxWidth: "800px", margin: "auto" }}>
-      <h1>{page.title}</h1>
-      <p>{page.content}</p>
+    <div style={{ padding: "40px",paddingTop: "120px", maxWidth: "800px", margin: "auto" }}>
+      <h1>Privacy Policy</h1>
+
+      <p>
+        We respect your privacy and are committed to protecting your data.
+      </p>
+
+      <ul>
+        <li>We collect only necessary user information.</li>
+        <li>Your data is never sold to third parties.</li>
+        <li>Cookies may be used to improve experience.</li>
+        <li>We use security measures to protect your data.</li>
+      </ul>
     </div>
   );
-}
+};
+
+export default Privacy;

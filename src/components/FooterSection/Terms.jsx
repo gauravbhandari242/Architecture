@@ -1,55 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-export default function Terms() {
-  const [page, setPage] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/page/terms")
-      .then((res) => res.json())
-      .then((data) => {
-        setPage(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return (
-      <p style={{ paddingTop: "130px", textAlign: "center" }}>
-        Loading...
-      </p>
-    );
-  }
-
-  if (!page) {
-    return (
-      <p style={{ paddingTop: "130px", textAlign: "center" }}>
-        Content not found.
-      </p>
-    );
-  }
-
+const Terms = () => {
   return (
-    <div style={{ paddingTop: "130px", maxWidth: "800px", margin: "auto" }}>
-      <h1>{page.title}</h1>
+    <div style={{ padding: "40px", paddingTop: "120px", maxWidth: "800px", margin: "auto" }}>
+      <h1>Terms of Use</h1>
 
-      {/* ✅ Map applied here */}
-      {Array.isArray(page.content) ? (
-        page.content.map((item, index) => (
-          <p
-            key={index}
-            style={{ marginBottom: "12px", lineHeight: "1.6" }}
-          >
-            {item}
-          </p>
-        ))
-      ) : (
-        <p>{page.content}</p>
-      )}
+      <p>
+        By using this website, you agree to follow these terms and conditions.
+      </p>
+
+      <ul>
+        <li>You must not misuse the website.</li>
+        <li>All content is protected and owned by us.</li>
+        <li>We may update terms anytime without notice.</li>
+        <li>You are responsible for your account activity.</li>
+      </ul>
     </div>
   );
-}
+};
+
+export default Terms;
